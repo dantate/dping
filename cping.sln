@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 10
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pingthing", "cping.vcxproj", "{E621FD29-1FAA-4313-9E15-46461E89C97C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug ICMP Only|Win32 = Debug ICMP Only|Win32
+		Debug Winsock2 Only|Win32 = Debug Winsock2 Only|Win32
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		Unicode Debug|Win32 = Unicode Debug|Win32
+		Unicode Release|Win32 = Unicode Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E621FD29-1FAA-4313-9E15-46461E89C97C}.Debug ICMP Only|Win32.ActiveCfg = Debug ICMP Only|Win32
+		{E621FD29-1FAA-4313-9E15-46461E89C97C}.Debug ICMP Only|Win32.Build.0 = Debug ICMP Only|Win32
+		{E621FD29-1FAA-4313-9E15-46461E89C97C}.Debug Winsock2 Only|Win32.ActiveCfg = Debug Winsock2 Only|Win32
+		{E621FD29-1FAA-4313-9E15-46461E89C97C}.Debug Winsock2 Only|Win32.Build.0 = Debug Winsock2 Only|Win32
+		{E621FD29-1FAA-4313-9E15-46461E89C97C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E621FD29-1FAA-4313-9E15-46461E89C97C}.Debug|Win32.Build.0 = Debug|Win32
+		{E621FD29-1FAA-4313-9E15-46461E89C97C}.Release|Win32.ActiveCfg = Release|Win32
+		{E621FD29-1FAA-4313-9E15-46461E89C97C}.Release|Win32.Build.0 = Release|Win32
+		{E621FD29-1FAA-4313-9E15-46461E89C97C}.Unicode Debug|Win32.ActiveCfg = Unicode Debug|Win32
+		{E621FD29-1FAA-4313-9E15-46461E89C97C}.Unicode Debug|Win32.Build.0 = Unicode Debug|Win32
+		{E621FD29-1FAA-4313-9E15-46461E89C97C}.Unicode Release|Win32.ActiveCfg = Unicode Release|Win32
+		{E621FD29-1FAA-4313-9E15-46461E89C97C}.Unicode Release|Win32.Build.0 = Unicode Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,328 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>CPing v1.40</title>
+<link rel="stylesheet" type="text/css" href="naughter.css">
+</head>
+
+<body>
+
+<h2 align="left"><img src="cping.gif" alt="cping.gif" width="39" height="37">CPing 
+v1.40</h2>
+<p>Welcome to <strong>CPing</strong>, a freeware MFC class to encapsulate the PING 
+protocol. </p>
+<table>
+	<tr>
+		<td><a href="#Features">Features</a></td>
+	</tr>
+	<tr>
+		<td><a href="#Usage">Usage</a></td>
+	</tr>
+	<tr>
+		<td><a href="#History">History</a></td>
+	</tr>
+	<tr>
+		<td><a href="#APIReference">API Reference</a></td>
+	</tr>
+	<tr>
+		<td><a href="#Enhancements">Planned Enhancements</a></td>
+	</tr>
+	<tr>
+		<td><a href="#Contact">Contacting the Author</a></td>
+	</tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a name="Features"></a>Features </h2>
+<ul>
+	<li>Simple and clean C++ interface.</li>
+	<li>The interface provided is synchronous which provides an easier programming 
+	model than using asynchronous sockets.</li>
+	<li>A configurable timeout for the connection can be set through the class API.</li>
+	<li>The classes are fully Unicode compliant and include Unicode built options 
+	in the workspace file.</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a name="Usage"></a>Usage </h2>
+<ul>
+	<li>To use the class in your code simply include ping.cpp in your project and 
+	#include ping.h in which ever of your modules needs to make calls to the class.
+	</li>
+	<li>You will need an up to date Platform SDK installed to compile the code if 
+	you are using Visual C++ 6 (February 2003 was the last version which was compatible 
+	with VC 6).</li>
+	<li>Your code will need to include MFC either statically or dynamically.</li>
+	<li>You will need to have a functioning winsock stack installed.</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a name="History"></a><strong>History</strong></h2>
+<p><strong>V1.0 (11 June 1998)</strong> </p>
+<ul>
+	<li>Initial public release. </li>
+</ul>
+<p><strong>V1.1 (23 June 1998)</strong> </p>
+<ul>
+	<li>The class now supports using Winsock 2 calls instead of using the ICMP dll. 
+	To use Winsock 2 calls in CPing instead of the ICMP dll, just define the pre-processor 
+	constant &quot;CPING_USE_WINSOCK2&quot; and don&#39;t forget to link to &quot;ws2_32.lib&quot;.</li>
+</ul>
+<p><strong>V1.2 (30 July 1998)</strong> </p>
+<ul>
+	<li>Can now use both Winsock 2 calls and ICMP style calls at the same time with 
+	the use of 2 pre-processor directives.</li>
+	<li>sample program now use generic entry point _tmain.</li>
+	<li>Got rid of a 2 level 4 compiler warnings.</li>
+	<li>Fixed a problem with the cleanup of ICMP dll usage.</li>
+	<li>Tidied up and optimized the usage of static variables.</li>
+</ul>
+<p><strong>V1.21 (9 November 1998)</strong> </p>
+<ul>
+	<li>Now ships with a VC 5 workspace file instead of VC 6. This is mainly because 
+	VC 6 is still not as stable as VC 5 plus a lot of people have not migrated to 
+	it yet.</li>
+	<li>Workspace file now includes configurations to allow both the Winsock 2 and 
+	ICMP based code to be exercised.</li>
+	<li>Fixed a level 4 warning which was occurring.</li>
+	<li>Removed a number of compiler errors which was occurring when code was compiled 
+	to use the ICMP or Winsock 2.</li>
+	<li>Fixed a bug whereby a ping to a non-existent host using the Winsock 2 method 
+	blocked indefinitely.</li>
+	<li>Fixed a socket handle leak which was occurring if the Winsock 2 method of 
+	pinging was used.</li>
+	<li>Fixed error in API documentation when compared with the actual header file.</li>
+	<li>Fixed error in API documentation regarding default timeouts value.</li>
+</ul>
+<p><strong>V1.22 (1 March 2000)</strong> </p>
+<ul>
+	<li>Fixed a problem where I was incorrectly overwriting memory in the function 
+	FillIcmpData.</li>
+	<li>tidied up the console info issued by CPing.</li>
+</ul>
+<p><strong>V1.23 (15 July 2001)</strong> </p>
+<ul>
+	<li>Updated copyright information</li>
+	<li>Code now automatically pulls in the Winsock 2 libraries as and when needed</li>
+</ul>
+<p><strong>V1.24 (12 January 2002)</strong> </p>
+<ul>
+	<li>Updated copyright information.</li>
+	<li>Now initializes Winsock 2.0 instead of Winsock 2.1. Thanks to Lev Elbert 
+	for spotting this problem.</li>
+</ul>
+<p><strong>V1.3 (25 February 2002)</strong> </p>
+<ul>
+	<li>Winsock 2 code path now allows you to bind the socket to a specific NIC. 
+	This can prove useful when you want to run a targeted ping request on a mulithoned 
+	machine.</li>
+	<li>Tidied up the code in the sample application </li>
+	<li>Provide a complete set of command line options for the sample app. It now 
+	provides almost a 1 - 1 implementation of the built in Ping options.</li>
+	<li>Completed reworked and recoded all the CPing code.</li>
+	<li>Client code is now responsible for initializing Winsock instead of having 
+	it embedded in the CPing code.</li>
+</ul>
+<p><strong>V1.31 (5 May 2002)</strong> </p>
+<ul>
+	<li>Now includes a EchoReplyStatus in CPingReply structure if CPING_NO_ICMP 
+	is not defined.</li>
+</ul>
+<p><strong>V1.32 (22 November 2002)</strong> </p>
+<ul>
+	<li>Fixed an issue in the calculation of the packet size when sending using 
+	raw sockets.</li>
+	<li>Default sample now uses a default TTL of 30</li>
+	<li>Changes the nPacketSize parameter to the Ping method to be nDataSize which 
+	is what it really is.</li>
+	<li>Reviewed all the TRACE messages for correctness</li>
+	<li>Made all the helper functions used by the code member functions of the class</li>
+	<li>General tidy up of the various defines</li>
+	<li>Winsock 2 version of ping now allows you to specify the sequence number 
+	of the packet. This allows the ping to exclude packets from the same process 
+	id which are being generated by for example another thread.</li>
+	<li>Fixed a bug in the call to recvfrom. The receive buffer size was not being 
+	specified correctly.</li>
+	<li>ICMP response packets from other processes are now ignored when waiting 
+	for an ICMP response</li>
+	<li>ICMP response packets from the same process but which have an incorrect 
+	sequence number are now ignored when waiting for an ICMP response.</li>
+	<li>Fix a resource leak of a socket when unexpected failures occur in the CPing::PingUsingWinsock 
+	function</li>
+</ul>
+<p><strong>V1.33 (10 March 2003)</strong> </p>
+<ul>
+	<li>Fixed a bug where using PingUsingWinsock and setting the data size greater 
+	than 1004 appears to cause Winsock error 10040 - The datagram is too large to 
+	fit into the buffer and is truncated. Thanks to Paul Golightly for reported 
+	this and provided the fix.</li>
+</ul>
+<p><strong>V1.34 (13 March 2003)</strong> </p>
+<ul>
+	<li>Fixed a bug in CPing::IsSocketReadible in the setup of the timeval structure. 
+	Thanks to &quot;InBloom Support&quot; for reporting this.</li>
+</ul>
+<p><strong>27 June 2003</strong> </p>
+<ul>
+	<li>Updated the documentation including description of PingUsingWinsock function 
+	plus a general review</li>
+</ul>
+<p><strong>V1.35 (23 November 2003)</strong> </p>
+<ul>
+	<li>Fixed a level 4 warning in VC 6 in the function CPing::PingUsingWinsock.</li>
+</ul>
+<p><strong>V1.36 (12 April 2004)</strong></p>
+<ul>
+	<li>Fixed a bug in the declaration of h_len and version in the IP_HEADER structure. 
+	Also made the source and destination IP addresses longs instead of ints to avoid 
+	any porting problems. Thanks to Yuh-Rong Leu for reporting this problem.</li>
+	<li>Fixed a bug in PingUsingWinsock when a timeout occurs and it returns TRUE. 
+	Thanks to Yuh-Rong Leu for reporting this problem.</li>
+	<li>Updated the documentation to refer to using the value from GetCurrentThreadId() 
+	for the nSequenceNumber parameter when calling the PingUsingWinsock function. 
+	Again thanks to Yuh-Rong Leu for reporting this issue.</li>
+	<li>Fixed an issue in DecodeResponse where if bTryAgain was set to TRUE, the 
+	return value was incorrectly also being set to TRUE. Thanks to Yuh-Rong Leu 
+	for reporting this issue. </li>
+</ul>
+<p><strong>V1.37 (11 June 2005)</strong> </p>
+<ul>
+	<li>Reviewed all TRACE statements for correctness. Thanks to &quot;Grenal&quot; for reporting 
+	this issue.</li>
+	<li>Checked all premature return points in the codebase to ensure the last error 
+	value is preserved.</li>
+	<li>Fixed an unreferrenced variable in DecodeResponse function when code is 
+	compiled with Visual Studio .NET 2003</li>
+</ul>
+<p><strong>V1.38 (31 July 2005)</strong> </p>
+<ul>
+	<li>When sending a ping, the allowable size of the data in the packet can now 
+	be anywhere from 0 to 65500. Previosuly sending a ping using Winsock was limited 
+	to a data size of 1024 and when using ICMP.dll, the size was limited to 255. 
+	Thanks to Leon Luu for reporting this issue.</li>
+</ul>
+<p><strong>V1.39 (31 July 2005)</strong> </p>
+<ul>
+	<li>Now the PingUsingICMP method using the versions provided in the IP Helper 
+	dll namely &quot;Iphlpapi.dll&quot; before falling back to &quot;ICMP.dll&quot;.</li>
+	<li>Tidied up the various ICMP defines by making them part of the _CPING_ICMP 
+	class</li>
+</ul>
+<p><strong>V1.40 (10 July 2006)</strong> </p>
+<ul>
+	<li>Updated copyright details</li>
+	<li>The code now requires the Platform SDK if compiled using VC 6.</li>
+	<li>Integrated the functionality of _CPING_ICMP class into CPing</li>
+	<li>Optimized CPingReply constructor code</li>
+	<li>Code now uses newer C++ style casts instead of C style casts.</li>
+	<li>Addition of CPING_EXT_CLASS macro to allow the code to be easily added to 
+	an extension dll.</li>
+	<li>Code now uses newer C++ style casts instead of C style casts.</li>
+	<li>Updated the code to clean compile on VC 2005.</li>
+	<li>Updated documentation to use the same style as the web site.</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a name="APIReference"></a><strong>API Reference</strong></p>
+<p>The API consists of the various public members of the class CPing</p>
+<p>&nbsp;</p>
+<p><strong>CPing::PingUsingICMP</strong></p>
+<p><strong>BOOL CPing::PingUsingICMP(LPCTSTR </strong><em>pszHostName</em><strong>, 
+CPingRepl</strong><b>y&amp;</b> <i>pr</i>, <strong>UCHAR</strong> <i>nTTL =</i><b> 1</b><strong>0, 
+DWORD </strong><i>dwTimeout =</i><strong> 5000, WORD</strong> <i>wDataSize =</i>
+<strong>32, UCHAR </strong><i>nTOS = </i><strong>0, BOOL </strong><i>bDontFragment 
+=</i> <strong>FALSE, LPCTSTR </strong><i>pszLocalBoundAddress =</i> <strong>NULL</strong>) 
+const</p>
+<p><strong>Return Value</strong></p>
+<p>If the function succeeds, the return value is TRUE. If the function 
+fails, the return value is FALSE. To get extended error information, call ::GetLastError.</p>
+<p><strong>Parameters</strong></p>
+<p><em>pszHostName</em> The network address of the socket to connect to: a machine 
+name such as &#8220;ftp.yourisp.com&#8221;, or a dotted number such as &#8220;128.56.22.8&#8221; will both 
+work.</p>
+<p><em>pr</em> This is a reference to a structure which will be filled in upon successful 
+return of this function. Currently it contains just two members, namely:</p>
+<p>&nbsp;&nbsp;&nbsp; <em>Address</em>&nbsp;&nbsp;&nbsp;&nbsp; This is the IP address 
+of the replier</p>
+<p>&nbsp;&nbsp;&nbsp; <em>RTT</em>&nbsp;&nbsp;&nbsp; This is the round trip time 
+in Milliseconds</p>
+<p><em>dwTimeout</em> This is the timeout to use for connections in milliseconds.</p>
+<p><em>nTTL</em> This is the time to live of the ICMP packet to be sent. For those 
+unfamiliar with the low level details of IP, this is the maximum number of routers 
+through which this packet should travel. Each time an IP packet goes through a router, 
+its TTL value is decremented by 1. Eventually when a packet is received with a TTL 
+of 1, it is not forwarded and instead an ICMP reply is generated. This prevents 
+the network from becoming flooded with old IP packets. As an aside this is the basis 
+of how traceroute is implemented.</p>
+<p><em>wDataSize</em> This is the size of the data to transmit in the ICMP packet.</p>
+<p><i>nTos</i> The Type of Service IP header field to use</p>
+<p><i>bDontFragment</i> Sets the Don&#39;t fragment IP header field</p>
+<p><strong>Remarks</strong></p>
+<p>Internally this function will use the ICMP dll to do a ping.</p>
+<p>&nbsp;</p>
+<p><strong>CPing::PingUsingWinsock</strong></p>
+<p><strong>BOOL CPing::PingUsingWinsock(LPCTSTR </strong><em>pszHostName</em><strong>, 
+CPingReply</strong>&amp; pr, <strong>UCHAR</strong> nTTL = <strong>10, DWORD
+</strong><em>dwTimeout</em><strong> = 5000, WORD</strong> wDataSize = <strong>32, 
+UCHAR </strong><i>nTOS = </i><strong>0, BOOL </strong><i>bDontFragment =</i>
+<strong>FALSE, LPCTSTR </strong><i>pszLocalBoundAddress =</i> <strong>NULL, USHORT
+</strong><i>nSequenceNumber = </i><strong>0</strong>) const</p>
+<p><strong>Return Value</strong></p>
+<p>If the function succeeds, the return value is TRUE. If the function 
+fails, the return value is FALSE. To get extended error information, call ::GetLastError.</p>
+<p><strong>Parameters</strong></p>
+<p><em>pszHostName</em> The network address of the socket to connect to: a machine 
+name such as &#8220;ftp.yourisp.com&#8221;, or a dotted number such as &#8220;128.56.22.8&#8221; will both 
+work.</p>
+<p><em>pr</em> This is a reference to a structure which will be filled in upon successful 
+return of this function. Currently it contains just two members, namely:</p>
+<p>&nbsp;&nbsp;&nbsp; <em>Address</em>&nbsp;&nbsp;&nbsp;&nbsp; This is the IP address 
+of the replier</p>
+<p>&nbsp;&nbsp;&nbsp; <em>RTT</em>&nbsp;&nbsp;&nbsp; This is the round trip time 
+in Milliseconds</p>
+<p><em>dwTimeout</em> This is the timeout to use for connections in milliseconds.</p>
+<p><em>nTTL</em> This is the time to live of the ICMP packet to be sent. For those 
+unfamiliar with the low level details of IP, this is the maximum number of routers 
+through which this packet should travel. Each time an IP packet goes through a router, 
+its TTL value is decremented by 1. Eventually when a packet is received with a TTL 
+of 1, it is not forwarded and instead an ICMP reply is generated. This prevents 
+the network from becoming flooded with old IP packets. As an aside this is the basis 
+of how traceroute is implemented.</p>
+<p><em>wDataSize</em> This is the size of the data to transmit in the ICMP packet.</p>
+<p><i>nTos</i> The Type of Service IP header field to use</p>
+<p><i>bDontFragment</i> Sets the Don&#39;t fragment IP header field</p>
+<p><i>pszLocalBoundAddress</i> The local address to bind the socket to</p>
+<p><i>nSequenceNumber</i> The ICMP sequence number to use. This can be useful when 
+you have say two threads in your app which issue independent ping calls. Using a 
+different sequence number for each thread will guarantee that receiving of the responses 
+will not interfere with each other. You would use the thread ID obtained by calling 
+the Win32 SDK call GetCurrentThreadId() in this case.</p>
+<p><strong>Remarks</strong></p>
+<p>Internally this function will use the raw socket calls to do a ping. Please note 
+that this functionality is only available on versions of Windows 9x which have the 
+Winsock 2 upgrade applied. Winsock 2 support is built into NT, 2000, XP and 2003, 
+but the code / user must be logged in as an Administrator when the call occurs.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a name="Enhancements"></a>Planned Enhancements </h2>
+<ul>
+	<li>If you have any other suggested improvements, please let me know so that 
+	I can incorporate them into the next release.</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a name="Contact"></a>Contacting the Author</h2>
+<p>PJ Naughter<br>
+Email: <a href="mailto:pjna@naughter.com">pjna@naughter.com</a><br>
+Web: <a href="http://www.naughter.com">http://www.naughter.com</a><br>
+10 July 2006</p>
+
+</body>
+
+</html>

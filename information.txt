@@ -1,0 +1,32 @@
+Changes made from original "Cping" sourcecode by Daniel Tate:
+
+Jan 11 08:
+
+- Added timestamp() code
+- Added XSleep() code 
+- Added command line parameter: rCmdInfo.Interval as -e:
+- Modified XSleep directive to use rCmdInfo.Interval
+- 
+
+Apr 30 08: 
+- Added sound!
+
+Differences from standard ping:
+
+- Prints timestamp
+- Running count of packet failures
+- Adjustable ping interval
+
+Todo:
+
+- Add logging option?
+
+/* 0  Black          8  Dark gray
+   1  Dark blue      9  Blue
+   2  Dark green     10 Green
+   3  Dark cyan      11 Cyan
+   4  Dark red       12 Red
+   5  Dark magenta   13 Magenta
+   6  Brown          14 Yellow
+   7  Light gray     15 White
+*/

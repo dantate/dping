@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="cping">
+</Property><Property Name="Solution File" Value="C:\oldlaptop\old-D\cping\cping.sln">
+</Property><Property Name="User Options File" Value="C:\oldlaptop\old-D\cping\cping.suo">
+</Property><Property Name="Date" Value="Sunday, October 11, 2009">
+</Property><Property Name="Time" Value="19:38 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="cping.sln" Description="File successfully backed up as C:\oldlaptop\old-D\cping\cping.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="cping.suo" Description="File successfully backed up as C:\oldlaptop\old-D\cping\cping.suo.old">
+</Event><Event ErrorLevel="0" Project="cping" Source="cping.vcproj" Description="Converting project file 'C:\oldlaptop\old-D\cping\cping.vcproj'.">
+</Event><Event ErrorLevel="0" Project="cping" Source="..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\VCProjectDefaults\UpgradeFromVC60.vsprops" Description="Converting project file 'c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\VCProjectDefaults\UpgradeFromVC60.vsprops'.">
+</Event><Event ErrorLevel="0" Project="cping" Source="..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\VCProjectDefaults\UpgradeFromVC60.vsprops" Description="Done converting to new project file 'c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\VCProjectDefaults\UpgradeFromVC60.props'.">
+</Event><Event ErrorLevel="3" Project="cping" Source="..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\VC\VCProjectDefaults\UpgradeFromVC60.vsprops" Description="Converted">
+</Event><Event ErrorLevel="1" Project="cping" Source="cping.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="cping" Source="cping.vcproj" Description="Done converting to new project file 'C:\oldlaptop\old-D\cping\cping.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="cping" Source="cping.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="cping.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="cping.sln" Description="Converted">
+</Event></UpgradeLog>
